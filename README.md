@@ -6,16 +6,9 @@ I intentionally needed that for writing a PHP Client for [TrafficCop](https://gi
 But the source grows so I decided to move it into an own package.
 You can also call this a [pack()](http://www.php.net/manual/en/function.pack.php) wrapper.
 
-## Install
-
-Installation should be done via [composer](http://packagist.org/).
-
+## Install Via Composer
 ```
-{
-    "require": {
-        "TrafficCophp/ByteBuffer": "dev-master"
-    }
-}
+composer require t3ran13/ByteBuffer
 ```
 
 ## Example
@@ -32,7 +25,7 @@ use TrafficCophp\ByteBuffer\ByteBuffer;
 $channel = 'channel_one';
 $message = 'php';
 
-$buffer = new ByteBuffer(4 + 1 + 4 + strlen($channel) + strlen($message));
+$buffer = new ByteBuffer();
 $buffer->writeInt32BE($buffer->length(), 0);
 $buffer->writeInt8(0x1, 4);
 $buffer->writeInt32BE(strlen($channel), 5);
