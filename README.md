@@ -8,7 +8,7 @@ You can also call this a [pack()](http://www.php.net/manual/en/function.pack.php
 
 ## Install Via Composer
 ```
-composer require t3ran13/ByteBuffer
+composer require t3ran13/bytebuffer
 ```
 
 ## Example
