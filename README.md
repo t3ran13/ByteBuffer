@@ -20,7 +20,7 @@ A simple usage example could look like this
 
 require __DIR__ . '/vendor/.composer/autoload.php';
 
-use TrafficCophp\ByteBuffer\ByteBuffer;
+use t3ran13\ByteBuffer\ByteBuffer;
 
 $channel = 'channel_one';
 $message = 'php';

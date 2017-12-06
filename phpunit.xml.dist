@@ -8,8 +8,8 @@
 	colors="true">
 
 	<testsuites>
-		<testsuite name="TrafficCophp Bytebuffer Test Suite">
-			<directory suffix="Test.php">tests/TrafficCophp/ByteBuffer</directory>
+		<testsuite name="t3ran13 Bytebuffer Test Suite">
+			<directory suffix="Test.php">tests/t3ran13/ByteBuffer</directory>
 		</testsuite>
 	</testsuites>
 

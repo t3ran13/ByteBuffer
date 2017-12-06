@@ -1,6 +1,6 @@
 <?php
 
-namespace TrafficCophp\ByteBuffer;
+namespace t3ran13\ByteBuffer;
 
 /**
  * LengthMap

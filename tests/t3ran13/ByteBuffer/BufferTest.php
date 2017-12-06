@@ -1,6 +1,6 @@
 <?php
 
-use TrafficCophp\ByteBuffer\ByteBuffer;
+use t3ran13\ByteBuffer\ByteBuffer;
 
 /**
  * ByteBuffer testsuite
