@@ -131,7 +131,7 @@ class ByteBuffer extends AbstractBuffer {
         if ($offset === null) {
             $offset = $this->currentOffset;
         }
-        $bytes = unpack('c*', $value); //string to bytes in int
+        $bytes = unpack('C*', $value); //string to bytes in int
         $total = count($bytes);
         for ($i = 0; $i < $total; $i++) {
             $this->buffer[$offset++] = pack('H*', base_convert($bytes[$i+1], 10, 16));
@@ -156,7 +156,7 @@ class ByteBuffer extends AbstractBuffer {
         if ($offset === null) {
             $offset = $this->currentOffset;
         }
-        $bytes = unpack('c*', $value); //string to bytes in int
+        $bytes = unpack('C*', $value); //string to bytes in int
         $total = count($bytes);
         for ($i = 0; $i < $total; $i++) {
             $this->buffer[$offset++] = pack('h*', base_convert($bytes[$i+1], 10, 16));
