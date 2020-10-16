@@ -134,7 +134,7 @@ class ByteBuffer extends AbstractBuffer {
         $bytes = unpack('C*', $value); //string to bytes in int
         $total = count($bytes);
         for ($i = 0; $i < $total; $i++) {
-            if (in_array($value[$i], ["\n","\r"])) {
+            if ($bytes[$i+1] <= 15) {
                 $this->buffer[$offset++] = pack('h*', base_convert($bytes[$i+1], 10, 16));
             } else {
                 $this->buffer[$offset++] = pack('H*', base_convert($bytes[$i+1], 10, 16));
