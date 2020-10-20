@@ -203,6 +203,18 @@ class ByteBuffer extends AbstractBuffer {
 		$this->insert($format, $value, $offset, $this->lengthMap->getLengthFor($format));
 	}
 
+	public function writeInt64BE($value, $offset = null) {
+		$format = 'J';
+		$this->checkForOverSize(0xffffffffffffffff, $value);
+		$this->insert($format, $value, $offset, $this->lengthMap->getLengthFor($format));
+	}
+
+	public function writeInt64LE($value, $offset = null) {
+		$format = 'P';
+		$this->checkForOverSize(0xffffffffffffffff, $value);
+		$this->insert($format, $value, $offset, $this->lengthMap->getLengthFor($format));
+	}
+
 	public function read($offset, $length) {
 		$format = 'a' . $length;
 		return $this->extract($format, $offset, $length);
@@ -230,6 +242,16 @@ class ByteBuffer extends AbstractBuffer {
 
 	public function readInt32LE($offset) {
 		$format = 'V';
+		return $this->extract($format, $offset, $this->lengthMap->getLengthFor($format));
+	}
+
+	public function readInt64BE($offset) {
+		$format = 'J';
+		return $this->extract($format, $offset, $this->lengthMap->getLengthFor($format));
+	}
+
+	public function readInt64LE($offset) {
+		$format = 'P';
 		return $this->extract($format, $offset, $this->lengthMap->getLengthFor($format));
 	}
 
