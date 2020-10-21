@@ -180,11 +180,6 @@ class ByteBuffer extends AbstractBuffer {
 		$this->insert($format, $value, $offset, $this->lengthMap->getLengthFor($format));
 	}
 
-	public function writeInt16BE2($value, $offset = null) {
-		$format = 's';
-		$this->insert($format, $value, $offset, $this->lengthMap->getLengthFor($format));
-	}
-
 	public function writeInt16LE($value, $offset = null) {
 		$format = 'v';
 		$this->checkForOverSize(0xffff, $value);
@@ -216,7 +211,7 @@ class ByteBuffer extends AbstractBuffer {
 	}
 
 	public function read($offset, $length) {
-		$format = $length;
+		$format = 'a' . $length;
 		return $this->extract($format, $offset, $length);
 	}
 
