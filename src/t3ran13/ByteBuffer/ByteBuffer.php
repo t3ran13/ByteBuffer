@@ -216,7 +216,7 @@ class ByteBuffer extends AbstractBuffer {
 	}
 
 	public function read($offset, $length) {
-		$format = 'a' . $length;
+		$format = $length;
 		return $this->extract($format, $offset, $length);
 	}
 
